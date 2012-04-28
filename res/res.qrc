@@ -1,1 +1,4 @@
-<RCC/>
+<RCC>
+    <qresource prefix="/block"/>
+    <qresource prefix="/mob"/>
+</RCC>
