@@ -10,14 +10,18 @@ TARGET = m2d
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp \
+SOURCES += src/main.cpp\
+        src/mainwindow.cpp \
     src/block.cpp
 
-HEADERS  += mainwindow.h \
-    src/block.h
+HEADERS  += src/mainwindow.h \
+    src/block.h \
+    src/block_types.h
 
-FORMS    += mainwindow.ui
+FORMS    += src/mainwindow.ui
 
 OTHER_FILES += \
     spec.txt
+
+RESOURCES += \
+    res/res.qrc
