@@ -1,19 +1,13 @@
 #ifndef BLOCK_H
 #define BLOCK_H
 
-#include <QGraphicsItem>
+#include <QGraphicsPixmapItem>
 #include "block_types.h"
 
 class Block : public QGraphicsPixmapItem
 {
-    Q_OBJECT
 public:
-    explicit Block(BlockType bt,QObject *parent = 0);
-
-signals:
-
-public slots:
-
+    explicit Block(BlockType bt,QPointF pos = QPointF(0,0), QGraphicsItem *parent = 0);
 };
 
 #endif // BLOCK_H

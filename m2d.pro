@@ -12,11 +12,13 @@ TEMPLATE = app
 
 SOURCES += src/main.cpp\
         src/mainwindow.cpp \
-    src/block.cpp
+    src/block.cpp \
+    src/mapscene.cpp
 
 HEADERS  += src/mainwindow.h \
     src/block.h \
-    src/block_types.h
+    src/block_types.h \
+    src/mapscene.h
 
 FORMS    += src/mainwindow.ui
 

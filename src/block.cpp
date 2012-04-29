@@ -1,20 +1,21 @@
 #include "block.h"
 
-Block::Block(BlockType bt, QObject *parent) :
-    QGraphicsItem(parent)
+Block::Block(BlockType bt, QPointF pos, QGraphicsItem *parent) :
+    QGraphicsPixmapItem(parent)
 {
+    this->setPos(pos.x(),pos.y());
     switch (bt){
     case Dirt:
-        this->setPixmap(":/block/dirt.png");
+        this->setPixmap(QPixmap(":/block/dirt.png"));
         break;
     case Stone:
-        this->setPixmap(":/block/stone.png");
+        this->setPixmap(QPixmap(":/block/stone.png"));
         break;
     case Gold:
-        this->setPixmap(":/block/gold.png");
+        this->setPixmap(QPixmap(":/block/gold.png"));
         break;
     default:
-        this->setPixmap(":/block/unknown.png");
+        this->setPixmap(QPixmap(":/block/unknown.png"));
         break;
     }
 }

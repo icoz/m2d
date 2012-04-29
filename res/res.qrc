@@ -1,4 +1,11 @@
 <RCC>
-    <qresource prefix="/block"/>
+    <qresource prefix="/block">
+        <file>dirt.png</file>
+        <file>gobble.png</file>
+        <file>gold.png</file>
+        <file>iron.png</file>
+        <file>stone.png</file>
+        <file>unknown.png</file>
+    </qresource>
     <qresource prefix="/mob"/>
 </RCC>
