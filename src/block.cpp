@@ -3,7 +3,8 @@
 Block::Block(BlockType bt, QPointF pos, QGraphicsItem *parent) :
     QGraphicsPixmapItem(parent)
 {
-    this->setPos(pos.x(),pos.y());
+    this->setPos(pos);
+    m_block_type = bt;
     switch (bt){
     case Dirt:
         this->setPixmap(QPixmap(":/block/dirt.png"));
