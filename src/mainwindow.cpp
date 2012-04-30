@@ -1,14 +1,16 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "block.h"
-#include "chunk.h"
+//#include "block.h"
+//#include "chunk.h"
+//#include "mapscene.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    sc = new QGraphicsScene(this);
+    sc = new MapScene("./map/", this);//QGraphicsScene(this);
+    sc->setPlayerPos(QPointF(0,0));
     ui->gvMain->setScene(sc);
     ui->gvMap->setScene(sc);
 //    sc->addItem(new Block(Dirt));
@@ -20,8 +22,8 @@ MainWindow::MainWindow(QWidget *parent) :
 //    g->addToGroup(new Block(Stone,QPointF(16,16)));
 //    g->setPos(QPointF(32,32));
 //    sc->addItem(g);
-    Chunk *c = new Chunk("chunk0_0.chunk");
-    sc->addItem(c);
+    //Chunk *c = new Chunk("chunk0_0.chunk");
+    //sc->addItem(c);
     ui->gvMain->scale(2,2);
     ui->gvMap->setSceneRect(sc->width()/2,sc->height()/2, 64*16, 64*16);
 }

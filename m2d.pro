@@ -17,13 +17,15 @@ SOURCES += src/main.cpp\
         src/mainwindow.cpp \
     src/block.cpp \
     src/mapscene.cpp \
-    src/chunk.cpp
+    src/chunk.cpp \
+    src/chunkmap.cpp
 
 HEADERS  += src/mainwindow.h \
     src/block.h \
     src/block_types.h \
     src/mapscene.h \
-    src/chunk.h
+    src/chunk.h \
+    src/chunkmap.h
 
 FORMS    += src/mainwindow.ui
 

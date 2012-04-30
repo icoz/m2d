@@ -3,7 +3,9 @@
 
 #include <QGraphicsScene>
 #include <QtGui>
+#include <QtCore>
 #include "chunk.h"
+#include "chunkmap.h"
 
 class MapScene : public QGraphicsScene
 {
@@ -13,18 +15,21 @@ public:
 //    void loadMap();
 //    void saveMap();
 protected:
-    void loadChunk(QString filename);
-    void saveChunk(QString filename);
+    void loadChunk(QPoint p);
+    void unloadChunk(QPoint p);
 
     //virtual void keyPressEvent ( QKeyEvent * keyEvent );
 
 private:
     QString m_map_dir;
-    //QMap<QPoint, Chunk*> chunks;
-    Chunk* chunks[3][3];
+    ChunkMap chunks;
+    //Chunk* chunks[3][3];
+
     QPointF cur_pos;
+    QPoint centralChunk;
 
     QPoint posToChunkCoords(QPointF pos);
+    int chunkPointToInt(QPoint p);
 };
 
 #endif // MAPSCENE_H
