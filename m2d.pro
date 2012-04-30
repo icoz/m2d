@@ -8,7 +8,10 @@ QT       += core gui
 
 TARGET = m2d
 TEMPLATE = app
-
+MOC_DIR = build
+UI_DIR = build
+OBJECTS_DIR = build
+RCC_DIR = build
 
 SOURCES += src/main.cpp\
         src/mainwindow.cpp \
