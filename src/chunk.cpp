@@ -61,7 +61,7 @@ void Chunk::loadMap()
         Block *b;
         for (qint32 i=0; i < count; i++){
             in >> block_type >> x >> y;
-            b = new Block(BlockType(block_type),QPointF(x, y));
+            b = new Block(BlockType(block_type),QPointF(x * TEXTURE_SIZE, y * TEXTURE_SIZE));
             this->addToGroup(b);
 //            blocks.insert(QPoint(x,y),b);
             blocks.append(b);
@@ -80,8 +80,8 @@ void Chunk::saveMap()
         Block *b;
         foreach (b, blocks){
             out << qint32(b->m_block_type); // save BlockType
-            out << qint32(b->x());
-            out << qint32(b->y());
+            out << qint32(b->x()/TEXTURE_SIZE);
+            out << qint32(b->y()/TEXTURE_SIZE);
         }
         fout.close();
     }
@@ -89,13 +89,13 @@ void Chunk::saveMap()
 
 void Chunk::generateMap()
 {
-    qint32 count = qrand() % (64*64);
+    qint32 count = qrand() % (CHUNK_SIZE*CHUNK_SIZE/2);
     Block *b;
     QPoint p;
     for (qint32 i = 0; i < count; i++){
-        do { p = QPoint(qrand()%64 * 16, qrand()%64 * 16);}
+        do { p = QPoint(qrand()%CHUNK_SIZE * TEXTURE_SIZE, qrand()%CHUNK_SIZE * TEXTURE_SIZE);}
         while (blockAtRelPos(p)) ;//check block at P
-        b = new Block(BlockType(qrand()%(qint32(LastBlock)-1)),p);
+        b = new Block(BlockType(qrand()%(qint32(LastBlock))),p);
 //        blocks.insert(p,b);
         blocks.append(b);
         this->addToGroup(b);

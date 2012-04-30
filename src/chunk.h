@@ -4,6 +4,8 @@
 #include <QGraphicsItemGroup>
 #include "block.h"
 
+#define CHUNK_SIZE 64
+
 class Chunk : public QGraphicsItemGroup
 {
 public:
@@ -12,7 +14,7 @@ public:
     Block* blockAtRelPos(QPoint);
     Block* blockAtAbsPos(QPointF);
 signals:
-    
+
 public slots:
 protected:
     QList<Block*> blocks;
