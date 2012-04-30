@@ -9,11 +9,17 @@ Block::Block(BlockType bt, QPointF pos, QGraphicsItem *parent) :
     case Dirt:
         this->setPixmap(QPixmap(":/block/dirt.png"));
         break;
+    case Gobble:
+        this->setPixmap(QPixmap(":/block/gobble.png"));
+        break;
     case Stone:
         this->setPixmap(QPixmap(":/block/stone.png"));
         break;
     case Gold:
         this->setPixmap(QPixmap(":/block/gold.png"));
+        break;
+    case Iron:
+        this->setPixmap(QPixmap(":/block/iron.png"));
         break;
     default:
         this->setPixmap(QPixmap(":/block/unknown.png"));

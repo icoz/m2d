@@ -1,10 +1,14 @@
 #ifndef BLOCK_TYPES_H
 #define BLOCK_TYPES_H
 
+#define TEXTURE_SIZE 16
+
 enum BlockType{
-    Dirt = 1,
-    Stone = 2,
-    Gold = 3,
+    Stone,
+    Gobble,
+    Dirt,
+    Iron,
+    Gold,
     LastBlock
 };
 
